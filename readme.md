@@ -1,3 +1,5 @@
+[![Drag Racing](screen.png)](screen.png)
+
 # Informations
 * Based on [ubuntu](https://hub.docker.com/_/ubuntu) official Docker image
 * This is not a production solution
@@ -7,6 +9,7 @@
 # Install
 ```shell
 git clone https://github.com/dmitry-brazhenko/airflow_tutorial.git
+cd airflow_tutorial
 make launch
 ```
 
@@ -15,4 +18,4 @@ make launch
 * Custom python packages can be added to `requirements.txt`
 * Dags are located in `dags` folder
 * Connect inside docker container: `make connect`
-# 
+* To restart container use `make launch`

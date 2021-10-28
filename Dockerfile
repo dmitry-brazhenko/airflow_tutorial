@@ -4,7 +4,12 @@ RUN apt-get update -y
 RUN apt-get install -y python3-pip python3-dev zsh curl git locales
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-RUN locale-gen en_US.UTF-8
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
+    locale-gen
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
 
 #RUN curl -fsSL https://get.docker.com -o get-docker.sh
 #RUN sh get-docker.sh
