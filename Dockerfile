@@ -10,19 +10,13 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-
-#RUN curl -fsSL https://get.docker.com -o get-docker.sh
-#RUN sh get-docker.sh
-#RUN service docker start
-
 COPY requirements.txt /root/requirements.txt
 RUN python3 -m pip install -r /root/requirements.txt
 
 RUN airflow users  create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
 RUN airflow db init
+
 COPY airflow.cfg /root/airflow/airflow.cfg
-
-
 CMD (airflow scheduler &) && airflow webserver
 
 
