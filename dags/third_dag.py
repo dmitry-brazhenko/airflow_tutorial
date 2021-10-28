@@ -4,7 +4,8 @@ from airflow.utils.dates import days_ago
 
 our_third_dag = DAG(
     "third_dag",
-    start_date=days_ago(0, 0, 0, 0, 0)
+    start_date=days_ago(0, 0, 0, 0, 0),
+    tags=['DockerOperator']
 )
 
 operation_1 = DockerOperator(

@@ -1,17 +1,18 @@
 # Informations
-* Based on [ubuntu](https://hub.docker.com/_/ubuntu) official image
+* Based on [ubuntu](https://hub.docker.com/_/ubuntu) official Docker image
 * This is not a production solution
-* 
+* Install [Docker](https://www.docker.com/)
+* Install [Docker Compose](https://docs.docker.com/compose/install/)
 
 # Install
-
-``` shell
-docker rm -f $(docker ps | grep airflow | awk '{print $1}')
-docker build -t airflow .
-docker run -it -p 8080:8080 airflow
+```shell
+git clone https://github.com/dmitry-brazhenko/airflow_tutorial.git
+make launch
 ```
 
-# Connect to docker container
-``` shell
-docker exec -it $(docker ps | grep airflow | awk '{print $14}') /bin/zsh     
-```
+# Usage
+* UI link: [localhost:8080](http://localhost:8080/) (login: admin, password: admin)
+* Custom python packages can be added to `requirements.txt`
+* Dags are located in `dags` folder
+* Connect inside docker container: `make connect`
+# 

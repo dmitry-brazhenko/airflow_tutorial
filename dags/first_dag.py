@@ -5,7 +5,8 @@ from airflow.utils.dates import days_ago
 
 our_first_dag = DAG(
     "first_dag",
-    start_date=days_ago(0, 0, 0, 0, 0)
+    start_date=days_ago(0, 0, 0, 0, 0),
+    tags=['bash']
 )
 
 operation_1 = BashOperator(
