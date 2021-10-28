@@ -19,3 +19,10 @@ make launch
 * Dags are located in `dags` folder
 * Connect inside docker container: `make connect`
 * To restart container use `make launch`
+
+# DAGs
+* **first_dag:** simple bash operators
+* **second_dag:** python operators
+* **third_dag:** simple DockerOperator
+
+
